@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container-fluit">
+        <div class="row">
+            <div class="col-sm-4">
+              <div class="card shadow p-3 mb-5 bg-body" id="rounded">
+                <div class="card-body mb-9">
+                  <h5 class="card-title mb-4">Token Details</h5>
+                  <div class="row d-flex">
+                    <div class="col-sm-6"><p>Token Address</p></div>
+                    <div class="col-sm-6 d-flex" >
+                      <p class="fw-bolder  mr-4" id="hashDisplay"><span id="content">0x928f64d31186A0a341B38624177E911D746dC6B6</span></p><i class="fa-regular fa-copy mt-1" id="copy-button"></i>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>Tokens For Presale</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="fw-bolder">180,000,000 G1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card shadow p-3 mb-5 bg-body" id="rounded">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">IDO Conditions</h5>
+                  <div class="row d-flex">
+                    <div class="col-sm-6">
+                      <p>Presale Rate</p>
+                    </div>
+                    <div class="col-sm-6 col-sm-n" >
+                      <p class="fw-bolder"> 0.05 USDT</p>
+                    </div>
+                    <div class="col-sm-6" id="col-sm-n">
+                      <P>Minimum Contribution</P>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="fw-bolder">10 USDT</p>
+                    </div>
+                    <div class="col-sm-6 " id="col-sm-n">
+                      <P>Maximum Contribution</P>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="fw-bolder ">20000 USDT</p>
+                    </div>
+                    <div class="col-sm-6" id="col-sm-n">
+                      <P>Hard Cap</P>
+                    </div>
+                    <div class="col-sm-6 col-sm-n">
+                      <p class="fw-bolder">800000 USDT</p>
+                    </div>
+                    <div class="col-sm-6" id="col-sm-n">
+                      <P>Token Releases</P>
+                    </div>
+                    <div class="col-sm-6 tRelease">
+                      <p class="fw-bolder">Nov 01, 2023 - <span>50%</span></p>
+                      <p class="fw-bolder">May 01, 2024 - <span>10%</span></p>
+                      <p class="fw-bolder">Jun 01, 2024 - <span>10%</span></p>
+                      <p class="fw-bolder">Jul 01, 2024 - <span>10%</span></p>
+                      <p class="fw-bolder">Aug 01, 2023 - <span>10%</span></p>
+                      <p class="fw-bolder">Sep 01, 2023 - <span>10%</span></p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card shadow p-3 mb-5 bg-body" id="rounded">
+                  <div class="card-body">
+                    <div class="t-title d-flex row">
+                      <h5 class="card-title col-sm-6 mb-4">Timeline</h5>
+                      <p>Time Zone: (<span id="timezone"></span>)</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <p>Presale Period</p>
+                      </div>
+                      <div class="col-sm-12 mb-2">
+                        <div class="rb-container">
+                          <ul class="rb">
+                            <li class="rb-item" ng-repeat="itembx">
+                              <div class="item-title fw-bolder">Start Jun 14, 2023 / 18:00</div>
+                            </li>
+                            <li class="rb-item" ng-repeat="itembx">
+                              <div class="item-title fw-bolder">Finish Jun 28, 2023 / 18:00</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mt-4 mb-3">Claim Date</div>
+                      <div class="col-sm-12">
+                        <div class="rb-container">
+                          <ul class="rb">
+                            <li class="rb-item" ng-repeat="itembx">
+                              <div class="item-title fw-bolder">Nov 01, 2023 / 18:00</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+<script>
+  // copyText
+const copyButton = document.getElementById('copy-button');
+        const content = document.getElementById('content');
+
+        copyButton.addEventListener('click', () => {
+            const textArea = document.createElement('textarea');
+            textArea.value = content.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            copyButton.classList = 'fa-solid fa-copy mt-1';
+            setTimeout(() => {
+                copyButton.classList = 'fa-regular fa-copy mt-1';
+            }, 1000);
+        });
+
+  // Hash Wrap
+  const hashDisplayElement = document.getElementById("hashDisplay");
+const hashNumber = hashDisplayElement.textContent;
+
+function formatHashNumber(hash) {
+  if (hash.length >= 11) {
+    const firstPart = hash.substring(0, 8);
+    const lastPart = hash.substring(hash.length - 4);
+    const formattedHash = `${firstPart}...${lastPart}`;
+    return formattedHash;
+  } else {
+    return hash;
+  }
+}
+
+hashDisplayElement.textContent = formatHashNumber(hashNumber);
+
+
+
+
+  // Time Zone
+  const timeZoneOffset = new Date().getTimezoneOffset();
+        const hours = Math.abs(Math.floor(timeZoneOffset / 60));
+        const minutes = Math.abs(timeZoneOffset % 60);
+        const timeZoneSign = timeZoneOffset < 0 ? '+' : '-';
+        const timeZoneDisplay = `GMT${timeZoneSign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        document.getElementById('timezone').textContent = timeZoneDisplay;
+    </script>
+</script>
+</body>
+</html>
